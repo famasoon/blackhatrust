@@ -10,8 +10,9 @@ mod subdomains;
 use model::Subdomain;
 mod common_ports;
 
-fn main() -> Result<(), anyhow::Error>{
+fn main() -> Result<(), anyhow::Error> {
     let args: Vec<String> = env::args().collect();
+
     if args.len() != 2 {
         return Err(Error::CliUsage.into());
     }
@@ -37,10 +38,11 @@ fn main() -> Result<(), anyhow::Error>{
             .collect();
 
         for subdomain in scan_result {
-            println!("{}", &subdomain.domain);
+            println!("{}:", &subdomain.domain);
             for port in &subdomain.open_ports {
                 println!("    {}", port.port);
             }
+
             println!();
         }
     });
