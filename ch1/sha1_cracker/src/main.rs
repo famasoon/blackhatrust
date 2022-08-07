@@ -1,4 +1,9 @@
-use std::{env, error::Error, fs::File, io::{BufRead, BufReader}&};
+use std::{
+    env,
+    error::Error,
+    fs::File,
+    io::{BufRead, BufReader},
+};
 
 const SHA1_HEX_STRING_LENGTH: usize = 40;
 
